@@ -33,7 +33,10 @@ jobs:
       - name: Update BTC OHLC Data
         run: python update_data.py
       
-      - name: Generate Report
+      - name: Run Backtest
+        run: python run_backtest.py
+      
+      - name: Generate HTML Report
         run: python generate_report.py
       
       - name: Commit and push changes
@@ -41,5 +44,5 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add -A
-          git diff --staged --quiet || git commit -m "📊 Auto-update BTC data - $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git diff --staged --quiet || git commit -m "📊 Auto-update BTC data & backtest - $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push
