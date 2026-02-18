@@ -10,4 +10,4 @@ timestamp,close,potential_side,below_lower_MR_long,above_upper_MR_short,price_ab
 2026-02-18 16:00:00,68128.5,0,False,False,False,False,False,False,68128.5,True
 2026-02-18 17:00:00,68156.0,0,False,False,False,False,False,False,68156.0,True
 2026-02-18 18:00:00,67800.3,0,False,False,False,False,False,False,67800.3,True
-2026-02-18 19:00:00,67792.7,0,False,False,False,False,False,False,67792.7,True
+2026-02-18 19:00:00,67550.1,0,False,False,False,True,False,False,67550.1,True
