@@ -23,9 +23,9 @@
     "variant": "0.50% stop, ATR\u00d73.0",
     "entry_time": "2026-02-27 10:00:00",
     "position": "short",
-    "entry_price": 66600.0,
-    "stop_price": 66933.0,
-    "tp_price": 65211.0
+    "entry_price": 66614.0,
+    "stop_price": 66947.0,
+    "tp_price": 65225.0
   },
   "equity_curve": [
     1217681.046450482,
@@ -529,6 +529,6 @@
     1554648.1525011563,
     1549648.1525011563
   ],
-  "last_updated": "2026-02-27 10:53:58 UTC",
-  "data_latest_timestamp": "2026-02-27 18:00:00"
+  "last_updated": "2026-02-27 11:40:46 UTC",
+  "data_latest_timestamp": "2026-02-27 19:00:00"
 }
