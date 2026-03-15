@@ -11,13 +11,13 @@
     "Max_consec_wins": 5,
     "Win_rate_30d_pct": 26.0,
     "Trades_30d": 34,
-    "PnL_30d": 14949.0,
+    "PnL_30d": 14696.0,
     "Win_rate_7d_pct": 43.0,
     "Trades_7d": 7,
-    "PnL_7d": 5265.0,
+    "PnL_7d": 5012.0,
     "Win_rate_3m_pct": 27.0,
     "Trades_3m": 83,
-    "PnL_3m": -14359.0
+    "PnL_3m": -14613.0
   },
   "live_position": null,
   "equity_curve": [
@@ -520,8 +520,8 @@
     1456829.3686185647,
     1480690.1396176142,
     1481448.9949353351,
-    1482094.2004703868
+    1481840.8768221345
   ],
-  "last_updated": "2026-03-15 15:39:23 UTC",
-  "data_latest_timestamp": "2026-03-15 23:00:00"
+  "last_updated": "2026-03-15 16:45:56 UTC",
+  "data_latest_timestamp": "2026-03-16 00:00:00"
 }
