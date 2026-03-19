@@ -18,7 +18,7 @@
 <body>
     <div class="container-fluid">
         <h1>📈 BTC Trading Strategy Dashboard</h1>
-        <p class="last-update">Last updated: 2026-03-19 05:35:25 UTC</p>
+        <p class="last-update">Last updated: 2026-03-19 07:11:22 UTC</p>
         
         <div class="row">
             <div class="col-md-3">
@@ -107,7 +107,15 @@
         
         <div class="card">
             <div class="card-header"><h4>🔴 LIVE POSITIONS</h4></div>
-            <div class="card-body"><div class="alert alert-info">No live position open.</div></div>
+            <div class="card-body">
+        <div class="alert alert-danger">
+            <h4>📉 SHORT Position Open</h4>
+            <p><strong>Entry:</strong> $70,587 | 
+               <strong>Stop:</strong> $70,940 | 
+               <strong>Target:</strong> $69,161</p>
+            <p><strong>Entry Time:</strong> 2026-03-19 06:00:00</p>
+        </div>
+        </div>
         </div>
         
         <div class="card">
@@ -142,32 +150,6 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th>2026-03-19 02:00:00</th>
-      <td>71,103</td>
-      <td>0</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>71,103</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2026-03-19 03:00:00</th>
-      <td>71,069</td>
-      <td>0</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>False</td>
-      <td>True</td>
-      <td>71,069</td>
-      <td>True</td>
-    </tr>
     <tr>
       <th>2026-03-19 04:00:00</th>
       <td>71,217</td>
@@ -287,7 +269,7 @@
     </tr>
     <tr>
       <th>2026-03-19 13:00:00</th>
-      <td>70,708</td>
+      <td>70,833</td>
       <td>0</td>
       <td>False</td>
       <td>False</td>
@@ -295,7 +277,33 @@
       <td>False</td>
       <td>False</td>
       <td>True</td>
-      <td>70,708</td>
+      <td>70,833</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2026-03-19 14:00:00</th>
+      <td>70,587</td>
+      <td>-1</td>
+      <td>False</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>70,940</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2026-03-19 15:00:00</th>
+      <td>70,205</td>
+      <td>-1</td>
+      <td>True</td>
+      <td>False</td>
+      <td>False</td>
+      <td>True</td>
+      <td>False</td>
+      <td>True</td>
+      <td>70,556</td>
       <td>True</td>
     </tr>
   </tbody>
@@ -344,42 +352,6 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th>2026-03-19 02:00:00</th>
-      <td>71,592</td>
-      <td>72,008</td>
-      <td>70,952</td>
-      <td>71,103</td>
-      <td>487</td>
-      <td>73,143</td>
-      <td>1,231</td>
-      <td>75,604</td>
-      <td>70,682</td>
-      <td>18</td>
-      <td>71,749</td>
-      <td>70,858</td>
-      <td>611</td>
-      <td>244</td>
-      <td>578</td>
-    </tr>
-    <tr>
-      <th>2026-03-19 03:00:00</th>
-      <td>71,103</td>
-      <td>71,485</td>
-      <td>70,924</td>
-      <td>71,069</td>
-      <td>257</td>
-      <td>73,001</td>
-      <td>1,300</td>
-      <td>75,600</td>
-      <td>70,402</td>
-      <td>19</td>
-      <td>72,008</td>
-      <td>70,952</td>
-      <td>618</td>
-      <td>244</td>
-      <td>587</td>
-    </tr>
     <tr>
       <th>2026-03-19 04:00:00</th>
       <td>71,064</td>
@@ -547,18 +519,54 @@
       <td>70,828</td>
       <td>70,916</td>
       <td>70,665</td>
-      <td>70,708</td>
-      <td>97</td>
-      <td>71,497</td>
-      <td>785</td>
-      <td>73,066</td>
-      <td>69,927</td>
-      <td>35</td>
+      <td>70,833</td>
+      <td>151</td>
+      <td>71,503</td>
+      <td>779</td>
+      <td>73,060</td>
+      <td>69,946</td>
+      <td>36</td>
       <td>71,618</td>
       <td>70,656</td>
       <td>479</td>
       <td>244</td>
       <td>587</td>
+    </tr>
+    <tr>
+      <th>2026-03-19 14:00:00</th>
+      <td>70,833</td>
+      <td>70,975</td>
+      <td>70,510</td>
+      <td>70,587</td>
+      <td>171</td>
+      <td>71,335</td>
+      <td>556</td>
+      <td>72,446</td>
+      <td>70,224</td>
+      <td>35</td>
+      <td>71,618</td>
+      <td>70,656</td>
+      <td>475</td>
+      <td>244</td>
+      <td>581</td>
+    </tr>
+    <tr>
+      <th>2026-03-19 15:00:00</th>
+      <td>70,586</td>
+      <td>70,606</td>
+      <td>70,111</td>
+      <td>70,205</td>
+      <td>182</td>
+      <td>71,198</td>
+      <td>468</td>
+      <td>72,134</td>
+      <td>70,262</td>
+      <td>23</td>
+      <td>71,214</td>
+      <td>70,510</td>
+      <td>472</td>
+      <td>244</td>
+      <td>575</td>
     </tr>
   </tbody>
 </table></div>
