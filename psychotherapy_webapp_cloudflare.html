@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Psychotherapy Resilience Webapp (Cloudflare Ready)</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --card: #1f2937;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22d3ee;
+      --accent2: #a78bfa;
+      --ok: #34d399;
+      --warn: #f59e0b;
+      --danger: #fb7185;
+      --border: #374151;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: linear-gradient(150deg, var(--bg), #1e1b4b);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    header {
+      background: rgba(17, 24, 39, 0.8);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1rem 1.2rem;
+      position: sticky;
+      top: 0.7rem;
+      backdrop-filter: blur(8px);
+      z-index: 30;
+    }
+
+    h1, h2, h3 { margin-top: 0; }
+
+    .subtitle {
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+      font-size: 0.98rem;
+    }
+
+    .crisis {
+      border: 1px solid #7f1d1d;
+      background: #450a0a;
+      color: #fecaca;
+      padding: 0.9rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.8rem;
+    }
+
+    .tab-btn {
+      border: 1px solid var(--border);
+      background: #0b1220;
+      color: var(--text);
+      padding: 0.55rem 0.8rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .tab-btn.active {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent);
+      color: #cffafe;
+    }
+
+    section.panel {
+      margin-top: 1rem;
+      display: none;
+      background: rgba(17, 24, 39, 0.82);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1rem;
+    }
+
+    section.panel.active { display: block; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 0.9rem;
+    }
+
+    label, .label {
+      font-size: 0.9rem;
+      color: #d1d5db;
+      display: block;
+      margin-bottom: 0.4rem;
+      margin-top: 0.5rem;
+    }
+
+    input[type="text"], input[type="number"], textarea, select {
+      width: 100%;
+      background: #0b1220;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.55rem;
+      font-size: 0.95rem;
+    }
+
+    textarea { min-height: 100px; resize: vertical; }
+
+    button {
+      margin-top: 0.6rem;
+      border: none;
+      border-radius: 10px;
+      padding: 0.55rem 0.8rem;
+      cursor: pointer;
+      font-weight: 600;
+      background: linear-gradient(120deg, var(--accent), var(--accent2));
+      color: #111827;
+    }
+
+    button.secondary {
+      background: #0b1220;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .result {
+      margin-top: 0.7rem;
+      padding: 0.65rem;
+      border-radius: 10px;
+      background: #0b1220;
+      border: 1px solid var(--border);
+      color: #dbeafe;
+      font-size: 0.92rem;
+      white-space: pre-wrap;
+    }
+
+    details {
+      background: #0b1220;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.65rem;
+      margin-bottom: 0.55rem;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: #e9d5ff;
+    }
+
+    ul { margin-top: 0.4rem; }
+
+    .tiny { font-size: 0.82rem; color: var(--muted); }
+
+    .footer-note {
+      margin: 1.1rem 0 2.2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .timer {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #67e8f9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Resilient Together</h1>
+      <p class="subtitle">A psychotherapy-informed companion focused on resilience, meaning, connection, and emotional recovery.</p>
+      <div class="crisis">
+        If you may act on thoughts of self-harm, call/text <strong>988</strong> (U.S. & Canada), call emergency services, or go to the nearest emergency room now.
+        This app is educational and <strong>not a substitute</strong> for professional care.
+      </div>
+      <div class="tabs" id="tabBar"></div>
+    </header>
+
+    <section id="dashboard" class="panel active">
+      <h2>Daily Stabilization Dashboard</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>1) Mood + Energy Check-in</h3>
+          <label for="mood">Mood (0-10)</label>
+          <input id="mood" type="number" min="0" max="10" value="4" />
+          <label for="energy">Energy (0-10)</label>
+          <input id="energy" type="number" min="0" max="10" value="4" />
+          <label for="hopeless">Hopelessness (0-10)</label>
+          <input id="hopeless" type="number" min="0" max="10" value="5" />
+          <button id="checkInBtn">Get supportive plan</button>
+          <div id="checkInOut" class="result"></div>
+        </div>
+
+        <div class="card">
+          <h3>2) 5-4-3-2-1 Grounding</h3>
+          <p class="tiny">A nervous-system calming exercise used in many CBT/trauma-informed approaches.</p>
+          <label>5 things you can see</label><textarea id="g5"></textarea>
+          <label>4 things you can feel</label><textarea id="g4"></textarea>
+          <label>3 things you can hear</label><textarea id="g3"></textarea>
+          <label>2 things you can smell</label><textarea id="g2"></textarea>
+          <label>1 thing you can taste</label><textarea id="g1"></textarea>
+          <button id="groundSave">Save grounding reflection</button>
+          <div id="groundOut" class="result"></div>
+        </div>
+
+        <div class="card">
+          <h3>3) Slow Breathing Timer</h3>
+          <p class="tiny">Try 4-second inhale + 6-second exhale. Longer exhales support calming.</p>
+          <div class="timer" id="timer">02:00</div>
+          <button id="startTimer">Start 2 min</button>
+          <button class="secondary" id="resetTimer">Reset</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="cbt" class="panel">
+      <h2>CBT Thought Record (for hopeless/overwhelmed states)</h2>
+      <div class="grid">
+        <div class="card">
+          <label>Situation</label>
+          <textarea id="c_situation" placeholder="What happened?"></textarea>
+          <label>Automatic thought</label>
+          <textarea id="c_thought" placeholder="What was the harsh thought/story?"></textarea>
+          <label>Emotion + intensity (0-100)</label>
+          <textarea id="c_emotion"></textarea>
+          <label>Evidence FOR the thought</label>
+          <textarea id="c_for"></textarea>
+          <label>Evidence AGAINST the thought</label>
+          <textarea id="c_against"></textarea>
+          <label>Balanced alternative thought</label>
+          <textarea id="c_alt"></textarea>
+          <button id="cbtBtn">Generate coping script</button>
+          <div id="cbtOut" class="result"></div>
+        </div>
+        <div class="card">
+          <h3>Common Thinking Traps</h3>
+          <ul>
+            <li>All-or-nothing thinking</li>
+            <li>Catastrophizing</li>
+            <li>Mental filter (only seeing negatives)</li>
+            <li>Mind reading</li>
+            <li>Overgeneralizing</li>
+            <li>Emotional reasoning ("I feel it, therefore it's true")</li>
+          </ul>
+          <p class="tiny">Goal: not fake positivity, but a more complete and reality-based thought.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="psychodynamic" class="panel">
+      <h2>Psychodynamic Reflection Studio</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Pattern Explorer</h3>
+          <label>What upset you recently?</label>
+          <textarea id="p_event"></textarea>
+          <label>What feeling came up first?</label>
+          <textarea id="p_feel"></textarea>
+          <label>What older memory does this resemble?</label>
+          <textarea id="p_memory"></textarea>
+          <label>What role did you slip into? (e.g., rescuer, invisible one, achiever)</label>
+          <input id="p_role" type="text" />
+          <button id="psyBtn">Build insight reflection</button>
+          <div id="psyOut" class="result"></div>
+        </div>
+        <div class="card">
+          <h3>Defense Mechanism Check (gentle)</h3>
+          <details><summary>Intellectualization</summary><p>Staying in ideas/facts to avoid painful feelings.</p></details>
+          <details><summary>Avoidance/Numbing</summary><p>Staying busy, scrolling, withdrawing, substances, oversleeping.</p></details>
+          <details><summary>People-pleasing</summary><p>Prioritizing others to avoid rejection or guilt.</p></details>
+          <details><summary>Self-criticism as control</summary><p>Harsh inner voice trying to prevent failure or shame.</p></details>
+          <p class="tiny">These are protective adaptations, not moral failures.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="burnout" class="panel">
+      <h2>Burnout Recovery Planner</h2>
+      <div class="grid">
+        <div class="card">
+          <label>Top 3 drains this week</label>
+          <textarea id="b_drains"></textarea>
+          <label>Top 3 replenishing actions (realistic, tiny)</label>
+          <textarea id="b_fills"></textarea>
+          <label>One boundary you need to set</label>
+          <textarea id="b_boundary"></textarea>
+          <label>Sleep anchor (consistent wake time)</label>
+          <input id="b_sleep" type="text" placeholder="e.g., 7:00 AM" />
+          <button id="burnBtn">Generate 7-day recovery map</button>
+          <div id="burnOut" class="result"></div>
+        </div>
+        <div class="card">
+          <h3>Micro-Recovery Menu</h3>
+          <ul>
+            <li>10-min sunlight + short walk</li>
+            <li>Body reset: neck/shoulder stretch 3 min</li>
+            <li>Phone-free meals</li>
+            <li>Work sprint with breaks (25/5)</li>
+            <li>"Good enough" standard for noncritical tasks</li>
+            <li>One daily act of self-respect</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="meaning" class="panel">
+      <h2>Meaning, Values, and Not Feeling Alone</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Values Clarifier</h3>
+          <label>Pick 5 values (e.g., kindness, truth, creativity, loyalty, growth)</label>
+          <textarea id="v_values"></textarea>
+          <label>What would a 2% move toward these look like this week?</label>
+          <textarea id="v_move"></textarea>
+          <label>Who can witness/support that move?</label>
+          <textarea id="v_support"></textarea>
+          <button id="valBtn">Build meaning plan</button>
+          <div id="valOut" class="result"></div>
+        </div>
+        <div class="card">
+          <h3>Connection Ladder</h3>
+          <ol>
+            <li>Send one low-pressure message: "Thinking of you."</li>
+            <li>Share one honest sentence about your week.</li>
+            <li>Ask one person for a 15-minute call/walk.</li>
+            <li>Join one recurring group (class, support group, volunteering).</li>
+            <li>Practice receiving help without apologizing for existing.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="library" class="panel">
+      <h2>Extensive Psychoeducation Library</h2>
+
+      <details open>
+        <summary>Depression: what helps over time</summary>
+        <ul>
+          <li>Behavioral activation: do small meaningful actions before motivation appears.</li>
+          <li>Sleep regularity, movement, and social contact strongly affect mood systems.</li>
+          <li>Depression often narrows attention to threat/loss; structured thought work can widen perspective.</li>
+          <li>If symptoms persist or worsen, professional assessment is important.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Hopelessness protocol (10-minute emergency self-support)</summary>
+        <ol>
+          <li>Name the state: "I am in a hopelessness wave."</li>
+          <li>Regulate body first: 2 minutes of slow exhale breathing.</li>
+          <li>Shrink timeframe: only solve the next 24 hours.</li>
+          <li>Do one non-zero action: water, shower, short walk, message someone.</li>
+          <li>Delay irreversible decisions by 48 hours whenever possible.</li>
+        </ol>
+      </details>
+
+      <details>
+        <summary>Psychodynamic ideas in plain language</summary>
+        <ul>
+          <li>Present pain can reactivate earlier attachment wounds.</li>
+          <li>Unconscious patterns repeat because they once protected you.</li>
+          <li>Awareness + self-compassion + new relational experiences can loosen old patterns.</li>
+          <li>Therapeutic alliance (a safe relationship) is often a core healing factor.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>Burnout vs. depression (quick distinction)</summary>
+        <ul>
+          <li>Burnout: often linked to chronic stress/work overload + cynicism + depletion.</li>
+          <li>Depression: broader low mood/loss of interest, can affect all domains.</li>
+          <li>They can overlap; both deserve support and often benefit from therapy.</li>
+        </ul>
+      </details>
+
+      <details>
+        <summary>When to seek professional help urgently</summary>
+        <ul>
+          <li>Thoughts of self-harm, feeling unsafe, or unable to care for yourself.</li>
+          <li>Rapid worsening of symptoms, severe insomnia, panic, or substance escalation.</li>
+          <li>Psychotic symptoms (hearing/seeing things others do not, paranoid beliefs).</li>
+        </ul>
+      </details>
+
+      <h3>Reputable Sources & Learning Channels</h3>
+      <ul>
+        <li>NIMH (National Institute of Mental Health): Depression overview and treatments.</li>
+        <li>NICE Guidelines: Depression management and evidence-based care paths.</li>
+        <li>American Psychological Association: Clinical practice guidelines.</li>
+        <li>World Health Organization: Mental health fact sheets and public guidance.</li>
+        <li>YouTube: Therapy in a Nutshell (Emma McAdam) for practical skills.</li>
+        <li>YouTube: Mark Tyrrell / Uncommon Knowledge for therapeutic education.</li>
+      </ul>
+      <p class="tiny">Links are included in the Resources tab for direct access.</p>
+    </section>
+
+    <section id="resources" class="panel">
+      <h2>Resources, Crisis, and Next Steps</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Crisis & Immediate Help</h3>
+          <ul>
+            <li>U.S./Canada: Call or text <strong>988</strong> (Suicide & Crisis Lifeline)</li>
+            <li>U.S. emergency: <strong>911</strong></li>
+            <li>Find international hotlines: <a href="https://findahelpline.com" target="_blank" rel="noopener">findahelpline.com</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Evidence-Informed Reading & Guidelines</h3>
+          <ul>
+            <li><a href="https://www.nimh.nih.gov/health/topics/depression" target="_blank" rel="noopener">NIMH: Depression</a></li>
+            <li><a href="https://www.nice.org.uk/guidance/ng222" target="_blank" rel="noopener">NICE Guideline NG222 (Depression in adults)</a></li>
+            <li><a href="https://www.apa.org/depression-guideline" target="_blank" rel="noopener">APA Clinical Practice Guideline for Depression</a></li>
+            <li><a href="https://www.who.int/news-room/fact-sheets/detail/depression" target="_blank" rel="noopener">WHO Depression Fact Sheet</a></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>YouTube Psychoeducation</h3>
+          <ul>
+            <li><a href="https://www.youtube.com/@TherapyinaNutshell" target="_blank" rel="noopener">Therapy in a Nutshell</a></li>
+            <li><a href="https://www.youtube.com/@UncommonKnowledge" target="_blank" rel="noopener">Mark Tyrrell / Uncommon Knowledge</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="card" style="margin-top:1rem;">
+        <h3>Your Commitment Note</h3>
+        <label>Write 3 compassionate promises to yourself for this week:</label>
+        <textarea id="commitNote" placeholder="1) I will ..."></textarea>
+        <button id="saveNote">Save locally</button>
+        <button class="secondary" id="loadNote">Load saved note</button>
+        <div id="noteOut" class="result"></div>
+      </div>
+    </section>
+
+    <p class="footer-note">Deploy on Cloudflare Pages by uploading this single HTML file as a static site.</p>
+  </div>
+
+  <script>
+    const tabs = [
+      { id: 'dashboard', label: 'Dashboard' },
+      { id: 'cbt', label: 'CBT' },
+      { id: 'psychodynamic', label: 'Psychodynamic' },
+      { id: 'burnout', label: 'Burnout' },
+      { id: 'meaning', label: 'Meaning & Connection' },
+      { id: 'library', label: 'Library' },
+      { id: 'resources', label: 'Resources' }
+    ];
+
+    const tabBar = document.getElementById('tabBar');
+    tabs.forEach((t, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'tab-btn' + (i === 0 ? ' active' : '');
+      btn.textContent = t.label;
+      btn.onclick = () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(t.id).classList.add('active');
+      };
+      tabBar.appendChild(btn);
+    });
+
+    document.getElementById('checkInBtn').onclick = () => {
+      const mood = +document.getElementById('mood').value;
+      const energy = +document.getElementById('energy').value;
+      const hopeless = +document.getElementById('hopeless').value;
+
+      let plan = [];
+      plan.push(`Today check-in: mood ${mood}/10, energy ${energy}/10, hopelessness ${hopeless}/10.`);
+
+      if (hopeless >= 8) {
+        plan.push('High distress: Please contact a trusted person now and consider calling/texting 988 for immediate support.');
+      }
+      if (energy <= 3) {
+        plan.push('Low-energy protocol: choose one 5-minute task, hydrate, and do a brief walk/stretch.');
+      }
+      if (mood <= 4) {
+        plan.push('Mood support: schedule one meaningful action before noon and one connection action before evening.');
+      } else {
+        plan.push('Maintain gains: keep structure, social touchpoint, and evening wind-down.');
+      }
+
+      plan.push('Self-talk: "My nervous system is overloaded, not broken. Small steps count."');
+      document.getElementById('checkInOut').textContent = plan.join('\n');
+    };
+
+    document.getElementById('groundSave').onclick = () => {
+      const entry = {
+        d: new Date().toISOString(),
+        see: document.getElementById('g5').value,
+        feel: document.getElementById('g4').value,
+        hear: document.getElementById('g3').value,
+        smell: document.getElementById('g2').value,
+        taste: document.getElementById('g1').value
+      };
+      localStorage.setItem('grounding_latest', JSON.stringify(entry));
+      document.getElementById('groundOut').textContent = 'Grounding reflection saved locally. Re-read it during overwhelm.';
+    };
+
+    let total = 120;
+    let timerRef = null;
+    const timerEl = document.getElementById('timer');
+
+    function renderTime() {
+      const m = String(Math.floor(total / 60)).padStart(2, '0');
+      const s = String(total % 60).padStart(2, '0');
+      timerEl.textContent = `${m}:${s}`;
+    }
+
+    document.getElementById('startTimer').onclick = () => {
+      if (timerRef) return;
+      timerRef = setInterval(() => {
+        total--;
+        renderTime();
+        if (total <= 0) {
+          clearInterval(timerRef);
+          timerRef = null;
+          timerEl.textContent = 'Done ✓';
+        }
+      }, 1000);
+    };
+
+    document.getElementById('resetTimer').onclick = () => {
+      if (timerRef) clearInterval(timerRef);
+      timerRef = null;
+      total = 120;
+      renderTime();
+    };
+
+    document.getElementById('cbtBtn').onclick = () => {
+      const thought = document.getElementById('c_thought').value || '[automatic thought]';
+      const alt = document.getElementById('c_alt').value || '[balanced thought]';
+      const out = [
+        `Automatic story: ${thought}`,
+        'Pause. Breathe out slowly for 6 seconds x 5 rounds.',
+        `Balanced response: ${alt}`,
+        'Action step in next 30 minutes: one concrete task + one connection message.',
+        'Reminder: feelings are data, not destiny.'
+      ].join('\n');
+      document.getElementById('cbtOut').textContent = out;
+    };
+
+    document.getElementById('psyBtn').onclick = () => {
+      const event = document.getElementById('p_event').value || '[event]';
+      const role = document.getElementById('p_role').value || '[role]';
+      const reflection = [
+        `Trigger: ${event}`,
+        `Possible repeated role: ${role}`,
+        'Compassionate interpretation: this role may have protected you earlier in life.',
+        'New experiment: name the feeling directly and ask for what you need in one sentence.',
+        'Relational repair phrase: "When X happened, I felt Y, and I need Z."'
+      ].join('\n');
+      document.getElementById('psyOut').textContent = reflection;
+    };
+
+    document.getElementById('burnBtn').onclick = () => {
+      const boundary = document.getElementById('b_boundary').value || '[boundary]';
+      const sleep = document.getElementById('b_sleep').value || '[wake time]';
+      document.getElementById('burnOut').textContent = [
+        '7-day recovery map:',
+        `• Boundary sentence to practice: ${boundary}`,
+        `• Sleep anchor: ${sleep}`,
+        '• Daily minimums: hydration, 10-min movement, one nourishing meal, one social touchpoint.',
+        '• Workload reset: remove/delegate one nonessential task.',
+        '• End of day: write 3 lines (what hurt / what helped / what I need tomorrow).'
+      ].join('\n');
+    };
+
+    document.getElementById('valBtn').onclick = () => {
+      const values = document.getElementById('v_values').value || '[values]';
+      const move = document.getElementById('v_move').value || '[2% move]';
+      const support = document.getElementById('v_support').value || '[support person]';
+      document.getElementById('valOut').textContent = [
+        `Core values: ${values}`,
+        `This week's 2% move: ${move}`,
+        `Witness/support: ${support}`,
+        'Meaning mantra: "Purpose is built through repeated small acts, not one perfect day."'
+      ].join('\n');
+    };
+
+    document.getElementById('saveNote').onclick = () => {
+      const val = document.getElementById('commitNote').value;
+      localStorage.setItem('commit_note', val);
+      document.getElementById('noteOut').textContent = 'Commitment note saved locally on this device.';
+    };
+
+    document.getElementById('loadNote').onclick = () => {
+      const saved = localStorage.getItem('commit_note') || 'No saved note yet.';
+      document.getElementById('noteOut').textContent = saved;
+    };
+  </script>
+</body>
+</html>
