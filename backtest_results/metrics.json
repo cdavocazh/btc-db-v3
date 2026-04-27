@@ -2,26 +2,25 @@
   "metrics": {
     "Variant": "0.50% stop, ATR\u00d73.0",
     "Capital_Risked": "5.0%",
-    "Trades": 1288,
+    "Trades": 1289,
     "Win_rate_pct": 27.0,
     "Win_Loss_ratio": 3.0,
-    "Cum_return_pct": 1295.0,
+    "Cum_return_pct": 1290.0,
     "Max_DD_pct": 12.0,
     "Max_consec_losses": 24,
     "Max_consec_wins": 5,
-    "Win_rate_30d_pct": 33.0,
-    "Trades_30d": 27,
-    "PnL_30d": 49239.0,
-    "Win_rate_7d_pct": 43.0,
-    "Trades_7d": 7,
-    "PnL_7d": 30262.0,
-    "Win_rate_3m_pct": 26.0,
+    "Win_rate_30d_pct": 32.0,
+    "Trades_30d": 22,
+    "PnL_30d": 23183.0,
+    "Win_rate_7d_pct": 20.0,
+    "Trades_7d": 5,
+    "PnL_7d": 1459.0,
+    "Win_rate_3m_pct": 25.0,
     "Trades_3m": 93,
-    "PnL_3m": 26649.0
+    "PnL_3m": 17987.0
   },
   "live_position": null,
   "equity_curve": [
-    1094994.7387082567,
     1147014.487242172,
     1142014.487242172,
     1137014.487242172,
@@ -520,8 +519,9 @@
     1383346.6624761573,
     1404805.2760742153,
     1399805.2760742153,
-    1394805.2760742153
+    1394805.2760742153,
+    1389805.2760742153
   ],
-  "last_updated": "2026-04-26 23:52:19 UTC",
-  "data_latest_timestamp": "2026-04-27 07:00:00"
+  "last_updated": "2026-04-27 03:55:13 UTC",
+  "data_latest_timestamp": "2026-04-27 11:00:00"
 }
