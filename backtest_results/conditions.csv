@@ -1,8 +1,4 @@
 timestamp,close,potential_side,below_lower_MR_long,above_upper_MR_short,price_above_high3,price_below_low3,rsi_gt_60_BO_long,rsi_lt_40_BO_short,potential_stop,atr_gt_median_vol
-2026-06-04 05:00:00,65771.2,0,False,False,False,False,False,True,65771.2,True
-2026-06-04 06:00:00,64918.3,0,False,False,False,False,False,True,64918.3,True
-2026-06-04 07:00:00,64146.3,-1,True,False,False,True,False,True,64467.0315,True
-2026-06-04 08:00:00,63350.0,-1,True,False,False,True,False,True,63666.74999999999,True
 2026-06-04 09:00:00,62180.9,-1,True,False,False,True,False,True,62491.8045,True
 2026-06-04 10:00:00,63227.1,0,False,False,False,False,False,True,63227.1,True
 2026-06-04 11:00:00,64365.6,0,False,False,False,False,False,True,64365.6,True
@@ -10,4 +6,8 @@ timestamp,close,potential_side,below_lower_MR_long,above_upper_MR_short,price_ab
 2026-06-04 13:00:00,63954.9,0,False,False,False,False,False,True,63954.9,True
 2026-06-04 14:00:00,64034.9,0,False,False,False,False,False,True,64034.9,True
 2026-06-04 15:00:00,63604.6,-1,False,False,False,True,False,True,63922.62299999999,True
-2026-06-04 16:00:00,63624.9,0,False,False,False,False,False,True,63624.9,True
+2026-06-04 16:00:00,63628.4,0,False,False,False,False,False,True,63628.4,True
+2026-06-04 17:00:00,63275.1,0,False,False,False,False,False,True,63275.1,True
+2026-06-04 18:00:00,62425.2,-1,False,False,False,True,False,True,62737.325999999994,True
+2026-06-04 19:00:00,62545.3,0,False,False,False,False,False,True,62545.3,True
+2026-06-04 20:00:00,62447.8,0,False,False,False,False,False,True,62447.8,True
