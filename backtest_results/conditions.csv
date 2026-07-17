@@ -1,13 +1,13 @@
 timestamp,close,potential_side,below_lower_MR_long,above_upper_MR_short,price_above_high3,price_below_low3,rsi_gt_60_BO_long,rsi_lt_40_BO_short,potential_stop,atr_gt_median_vol
-2026-07-17 15:00:00,62828.3,0,False,False,False,False,False,True,62828.3,True
-2026-07-17 16:00:00,62893.2,0,False,False,False,False,False,True,62893.2,True
-2026-07-17 17:00:00,62998.6,0,False,False,False,False,False,True,62998.6,True
-2026-07-17 18:00:00,63180.9,0,False,False,True,False,False,True,63180.9,True
-2026-07-17 19:00:00,63297.3,0,False,False,True,False,False,True,63297.3,True
-2026-07-17 20:00:00,63092.9,0,False,False,False,False,False,True,63092.9,True
-2026-07-17 21:00:00,63154.7,0,False,False,False,False,False,True,63154.7,True
-2026-07-17 22:00:00,63175.8,0,False,False,False,False,False,True,63175.8,True
-2026-07-17 23:00:00,63457.9,0,False,False,False,False,False,False,63457.9,True
-2026-07-18 00:00:00,63590.5,0,False,False,True,False,False,False,63590.5,True
-2026-07-18 01:00:00,64053.5,0,False,False,True,False,False,False,64053.5,True
-2026-07-18 02:00:00,64077.3,0,False,False,False,False,True,False,64077.3,True
+2026-07-17 17:00:00,62989.4,0,False,False,False,False,False,True,62989.4,True
+2026-07-17 18:00:00,63172.0,0,False,False,True,False,False,True,63172.0,True
+2026-07-17 19:00:00,63293.4,0,False,False,True,False,False,True,63293.4,True
+2026-07-17 20:00:00,63093.8,0,False,False,False,False,False,True,63093.8,True
+2026-07-17 21:00:00,63157.0,0,False,False,False,False,False,True,63157.0,True
+2026-07-17 22:00:00,63179.0,0,False,False,False,False,False,True,63179.0,True
+2026-07-17 23:00:00,63460.1,0,False,False,False,False,False,False,63460.1,True
+2026-07-18 00:00:00,63594.7,0,False,False,True,False,False,False,63594.7,True
+2026-07-18 01:00:00,64055.5,0,False,False,True,False,False,False,64055.5,True
+2026-07-18 02:00:00,64260.2,1,False,False,True,False,True,False,63938.899,True
+2026-07-18 03:00:00,64157.4,0,False,False,False,False,True,False,64157.4,True
+2026-07-18 04:00:00,64026.0,0,False,False,False,False,True,False,64026.0,True
