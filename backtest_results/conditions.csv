@@ -1,13 +1,13 @@
 timestamp,close,potential_side,below_lower_MR_long,above_upper_MR_short,price_above_high3,price_below_low3,rsi_gt_60_BO_long,rsi_lt_40_BO_short,potential_stop,atr_gt_median_vol
-2026-08-18 06:00:00,64292.4,0,False,False,False,False,True,False,64292.4,False
-2026-08-18 07:00:00,64532.4,1,False,False,True,False,True,False,64209.738,True
-2026-08-18 08:00:00,64383.7,0,False,False,False,False,True,False,64383.7,False
-2026-08-18 09:00:00,64200.0,0,False,False,False,True,True,False,64200.0,False
-2026-08-18 10:00:00,64106.2,0,False,False,False,True,True,False,64106.2,False
-2026-08-18 11:00:00,64182.5,0,False,False,False,False,True,False,64182.5,False
-2026-08-18 12:00:00,64219.5,0,False,False,False,False,False,False,64219.5,False
-2026-08-18 13:00:00,64235.4,0,False,False,False,False,False,False,64235.4,False
-2026-08-18 14:00:00,64324.4,0,False,False,True,False,False,False,64324.4,False
-2026-08-18 15:00:00,64194.6,0,False,False,False,False,False,False,64194.6,False
-2026-08-18 16:00:00,64292.7,0,False,False,False,False,False,False,64292.7,False
-2026-08-18 17:00:00,64150.7,0,False,False,False,False,False,False,64150.7,False
+2026-08-18 07:00:00,64533.2,1,False,False,True,False,True,False,64210.534,True
+2026-08-18 08:00:00,64382.1,0,False,False,False,False,True,False,64382.1,False
+2026-08-18 09:00:00,64205.4,0,False,False,False,True,True,False,64205.4,False
+2026-08-18 10:00:00,64103.0,0,False,False,False,True,True,False,64103.0,True
+2026-08-18 11:00:00,64175.6,0,False,False,False,False,True,False,64175.6,False
+2026-08-18 12:00:00,64208.5,0,False,False,False,False,False,False,64208.5,False
+2026-08-18 13:00:00,64228.4,0,False,False,False,False,False,False,64228.4,False
+2026-08-18 14:00:00,64326.6,0,False,False,True,False,False,False,64326.6,False
+2026-08-18 15:00:00,64200.9,0,False,False,False,False,False,False,64200.9,False
+2026-08-18 16:00:00,64289.6,0,False,False,False,False,False,False,64289.6,False
+2026-08-18 17:00:00,64169.6,0,False,False,False,False,False,False,64169.6,False
+2026-08-18 18:00:00,64212.0,0,False,False,False,False,False,False,64212.0,False
