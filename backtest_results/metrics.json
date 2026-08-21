@@ -5,19 +5,19 @@
     "Trades": 1347,
     "Win_rate_pct": 27.0,
     "Win_Loss_ratio": 3.0,
-    "Cum_return_pct": 1200.0,
-    "Max_DD_pct": 12.0,
+    "Cum_return_pct": 1169.0,
+    "Max_DD_pct": 13.0,
     "Max_consec_losses": 23,
     "Max_consec_wins": 5,
-    "Win_rate_30d_pct": 43.0,
+    "Win_rate_30d_pct": 36.0,
     "Trades_30d": 14,
-    "PnL_30d": 62312.0,
-    "Win_rate_7d_pct": 75.0,
+    "PnL_30d": 31525.0,
+    "Win_rate_7d_pct": 50.0,
     "Trades_7d": 4,
-    "PnL_7d": 73368.0,
-    "Win_rate_3m_pct": 35.0,
+    "PnL_7d": 42581.0,
+    "Win_rate_3m_pct": 34.0,
     "Trades_3m": 68,
-    "PnL_3m": 94773.0
+    "PnL_3m": 63986.0
   },
   "live_position": null,
   "equity_curve": [
@@ -517,11 +517,11 @@
     1216062.5576844679,
     1231495.8482845628,
     1226495.8482845628,
-    1252317.5357292502,
-    1247317.5357292502,
-    1272532.7673793456,
-    1299863.6716522838
+    1221495.8482845628,
+    1216495.8482845628,
+    1241668.8085223609,
+    1269076.8059239185
   ],
-  "last_updated": "2026-08-21 18:50:46 UTC",
-  "data_latest_timestamp": "2026-08-22 02:00:00"
+  "last_updated": "2026-08-21 19:32:22 UTC",
+  "data_latest_timestamp": "2026-08-22 03:00:00"
 }
