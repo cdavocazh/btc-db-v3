@@ -1,13 +1,13 @@
 timestamp,close,potential_side,below_lower_MR_long,above_upper_MR_short,price_above_high3,price_below_low3,rsi_gt_60_BO_long,rsi_lt_40_BO_short,potential_stop,atr_gt_median_vol
-2026-08-26 20:00:00,78320.3,0,False,False,False,False,False,True,78320.3,True
-2026-08-26 21:00:00,78448.1,0,False,False,False,False,False,False,78448.1,True
-2026-08-26 22:00:00,77790.2,-1,False,False,False,True,False,True,78179.15099999998,True
-2026-08-26 23:00:00,78012.0,0,False,False,False,False,False,True,78012.0,True
-2026-08-27 00:00:00,77992.2,0,False,False,False,False,False,True,77992.2,True
-2026-08-27 01:00:00,78443.6,0,False,False,False,False,False,False,78443.6,True
-2026-08-27 02:00:00,78479.0,0,False,False,False,False,False,False,78479.0,True
-2026-08-27 03:00:00,78474.7,0,False,False,False,False,False,True,78474.7,True
-2026-08-27 04:00:00,78453.9,0,False,False,False,False,False,False,78453.9,True
-2026-08-27 05:00:00,78727.4,0,False,False,True,False,False,False,78727.4,True
 2026-08-27 06:00:00,78696.1,0,False,False,False,False,False,False,78696.1,True
-2026-08-27 07:00:00,78713.6,0,False,False,False,False,False,False,78713.6,True
+2026-08-27 07:00:00,79031.1,1,False,False,True,False,True,False,78635.94450000001,True
+2026-08-27 08:00:00,78696.7,0,False,False,False,False,False,False,78696.7,True
+2026-08-27 09:00:00,78903.4,0,False,False,False,False,False,False,78903.4,True
+2026-08-27 10:00:00,78736.0,0,False,False,False,False,False,False,78736.0,True
+2026-08-27 11:00:00,78837.8,0,False,False,False,False,False,False,78837.8,True
+2026-08-27 12:00:00,78779.4,0,False,False,False,False,True,False,78779.4,True
+2026-08-27 13:00:00,78914.7,0,False,False,False,False,True,False,78914.7,True
+2026-08-27 14:00:00,78828.0,0,False,False,False,False,True,False,78828.0,True
+2026-08-27 15:00:00,79079.1,1,False,False,True,False,True,False,78683.7045,True
+2026-08-27 16:00:00,79763.4,-1,False,True,True,False,True,False,80162.21699999999,True
+2026-08-27 17:00:00,80491.7,-1,False,True,True,False,True,False,80894.15849999999,True
