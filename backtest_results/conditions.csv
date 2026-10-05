@@ -1,13 +1,13 @@
 timestamp,close,potential_side,below_lower_MR_long,above_upper_MR_short,price_above_high3,price_below_low3,rsi_gt_60_BO_long,rsi_lt_40_BO_short,potential_stop,atr_gt_median_vol
-2026-10-05 05:00:00,85862.3,0,False,True,False,False,True,False,85862.3,False
-2026-10-05 06:00:00,86440.0,-1,False,True,True,False,True,False,86872.2,True
-2026-10-05 07:00:00,86525.1,-1,False,True,False,False,True,False,86957.7255,True
-2026-10-05 08:00:00,86654.1,-1,False,True,False,False,True,False,87087.37049999999,True
-2026-10-05 09:00:00,86610.4,0,False,False,False,False,True,False,86610.4,True
-2026-10-05 10:00:00,86525.6,0,False,False,False,False,True,False,86525.6,True
-2026-10-05 11:00:00,86092.2,0,False,False,False,True,True,False,86092.2,True
-2026-10-05 12:00:00,85544.0,0,False,False,False,True,False,False,85544.0,True
-2026-10-05 13:00:00,85778.0,0,False,False,False,False,False,False,85778.0,True
-2026-10-05 14:00:00,86268.1,0,False,False,False,False,True,False,86268.1,True
-2026-10-05 15:00:00,86245.3,0,False,False,False,False,True,False,86245.3,True
-2026-10-05 16:00:00,86252.3,0,False,False,False,False,True,False,86252.3,True
+2026-10-05 15:00:00,86259.1,0,False,False,False,False,True,False,86259.1,True
+2026-10-05 16:00:00,86231.9,0,False,False,False,False,True,False,86231.9,True
+2026-10-05 17:00:00,85979.6,0,False,False,False,False,False,False,85979.6,True
+2026-10-05 18:00:00,86115.9,0,False,False,False,False,False,False,86115.9,True
+2026-10-05 19:00:00,86215.8,0,False,False,False,False,False,False,86215.8,True
+2026-10-05 20:00:00,85895.1,0,False,False,False,False,False,False,85895.1,True
+2026-10-05 21:00:00,86430.0,0,False,False,True,False,False,False,86430.0,True
+2026-10-05 22:00:00,85644.4,-1,False,False,False,True,False,True,86072.62199999999,True
+2026-10-05 23:00:00,85265.1,-1,False,False,False,True,False,True,85691.4255,True
+2026-10-06 00:00:00,85303.8,0,False,False,False,False,False,True,85303.8,True
+2026-10-06 01:00:00,85430.2,0,False,False,False,False,False,False,85430.2,True
+2026-10-06 02:00:00,85481.8,0,False,False,False,False,False,False,85481.8,True
