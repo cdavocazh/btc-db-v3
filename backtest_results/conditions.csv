@@ -1,13 +1,13 @@
 timestamp,close,potential_side,below_lower_MR_long,above_upper_MR_short,price_above_high3,price_below_low3,rsi_gt_60_BO_long,rsi_lt_40_BO_short,potential_stop,atr_gt_median_vol
-2026-10-30 16:00:00,78031.3,-1,False,False,False,True,False,True,78421.4565,True
-2026-10-30 17:00:00,77671.7,-1,False,False,False,True,False,True,78060.05849999998,True
-2026-10-30 18:00:00,77818.0,0,False,False,False,False,False,False,77818.0,True
-2026-10-30 19:00:00,77362.1,0,False,False,False,False,False,True,77362.1,True
-2026-10-30 20:00:00,77447.3,0,False,False,False,False,False,True,77447.3,True
-2026-10-30 21:00:00,77138.1,0,False,False,False,True,False,False,77138.1,True
-2026-10-30 22:00:00,77210.3,0,False,False,False,False,False,False,77210.3,True
-2026-10-30 23:00:00,77588.1,0,False,False,True,False,False,False,77588.1,True
-2026-10-31 00:00:00,77312.0,0,False,False,False,False,False,False,77312.0,True
-2026-10-31 01:00:00,77141.9,0,False,False,False,False,False,True,77141.9,True
-2026-10-31 02:00:00,76615.1,-1,False,False,False,True,False,True,76998.1755,True
-2026-10-31 03:00:00,76444.1,0,False,False,False,False,False,True,76444.1,True
+2026-10-30 20:00:00,77456.1,0,False,False,False,False,False,True,77456.1,True
+2026-10-30 21:00:00,77139.5,0,False,False,False,True,False,False,77139.5,True
+2026-10-30 22:00:00,77212.0,0,False,False,False,False,False,False,77212.0,True
+2026-10-30 23:00:00,77593.7,0,False,False,True,False,False,False,77593.7,True
+2026-10-31 00:00:00,77316.7,0,False,False,False,False,False,False,77316.7,True
+2026-10-31 01:00:00,77146.9,0,False,False,False,False,False,True,77146.9,True
+2026-10-31 02:00:00,76610.7,-1,False,False,False,True,False,True,76993.75349999999,True
+2026-10-31 03:00:00,76887.7,0,False,False,False,False,False,True,76887.7,True
+2026-10-31 04:00:00,76888.3,0,False,False,False,False,False,True,76888.3,True
+2026-10-31 05:00:00,76669.8,0,False,False,False,False,False,True,76669.8,True
+2026-10-31 06:00:00,76911.5,0,False,False,False,False,False,True,76911.5,True
+2026-10-31 07:00:00,77271.8,0,False,False,True,False,False,False,77271.8,True
