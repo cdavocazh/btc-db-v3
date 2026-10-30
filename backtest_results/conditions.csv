@@ -1,13 +1,13 @@
 timestamp,close,potential_side,below_lower_MR_long,above_upper_MR_short,price_above_high3,price_below_low3,rsi_gt_60_BO_long,rsi_lt_40_BO_short,potential_stop,atr_gt_median_vol
-2026-10-30 03:00:00,80843.1,0,False,False,False,False,False,False,80843.1,True
-2026-10-30 04:00:00,78864.0,-1,False,False,False,True,False,True,79258.31999999999,True
-2026-10-30 05:00:00,79041.5,0,False,False,False,False,False,False,79041.5,True
-2026-10-30 06:00:00,79009.6,0,False,False,False,False,False,False,79009.6,True
-2026-10-30 07:00:00,78007.2,-1,False,False,False,True,False,True,78397.23599999999,True
-2026-10-30 08:00:00,77260.1,-1,True,False,False,True,False,True,77646.4005,True
-2026-10-30 09:00:00,76839.7,1,True,False,False,False,False,True,76455.5015,True
-2026-10-30 10:00:00,77425.8,0,False,False,False,False,False,True,77425.8,True
-2026-10-30 11:00:00,78225.0,0,False,False,False,False,False,True,78225.0,True
-2026-10-30 12:00:00,78267.1,0,False,False,True,False,False,True,78267.1,True
-2026-10-30 13:00:00,78550.3,0,False,False,True,False,False,True,78550.3,True
-2026-10-30 14:00:00,78641.4,0,False,False,False,False,False,True,78641.4,True
+2026-10-30 11:00:00,78215.0,0,False,False,False,False,False,True,78215.0,True
+2026-10-30 12:00:00,78262.4,0,False,False,True,False,False,True,78262.4,True
+2026-10-30 13:00:00,78543.6,0,False,False,True,False,False,True,78543.6,True
+2026-10-30 14:00:00,78639.4,0,False,False,False,False,False,True,78639.4,True
+2026-10-30 15:00:00,78187.8,0,False,False,False,False,False,True,78187.8,True
+2026-10-30 16:00:00,78031.3,-1,False,False,False,True,False,True,78421.4565,True
+2026-10-30 17:00:00,77671.7,-1,False,False,False,True,False,True,78060.05849999998,True
+2026-10-30 18:00:00,77818.0,0,False,False,False,False,False,False,77818.0,True
+2026-10-30 19:00:00,77362.1,0,False,False,False,False,False,True,77362.1,True
+2026-10-30 20:00:00,77447.3,0,False,False,False,False,False,True,77447.3,True
+2026-10-30 21:00:00,77138.1,0,False,False,False,True,False,False,77138.1,True
+2026-10-30 22:00:00,77104.3,0,False,False,False,False,False,False,77104.3,True
